@@ -1,8 +1,8 @@
 <header class="top"><div class="wrap">
-  <a href="{{ "/" | relURL }}" aria-label="XiLAB, accueil"><img class="logo-light" src="{{ "img/logo-fonce.png" | relURL }}" width="1000" height="480" alt="XiLAB, l'ingénierie agile"><img class="logo-dark" src="{{ "img/logo-clair.png" | relURL }}" width="1000" height="480" alt="XiLAB, l'ingénierie agile"></a>
+  <a href="{{ site.Home.RelPermalink }}" aria-label="XiLAB, accueil"><img class="logo-light" src="{{ "img/logo-fonce.png" | relURL }}" width="1000" height="480" alt="XiLAB, l'ingénierie agile"><img class="logo-dark" src="{{ "img/logo-clair.png" | relURL }}" width="1000" height="480" alt="XiLAB, l'ingénierie agile"></a>
   <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
   <nav class="main" id="nav" aria-label="Navigation principale">
-    <a href="{{ "/" | relURL }}" data-v="accueil"{{ if or (eq $.Params.vue "accueil") (and (eq "accueil" "voxfem") (eq $.Params.vue "validation")) }} aria-current="page"{{ end }}>Accueil</a>
+    <a href="{{ site.Home.RelPermalink }}" data-v="accueil"{{ if or (eq $.Params.vue "accueil") (and (eq "accueil" "voxfem") (eq $.Params.vue "validation")) }} aria-current="page"{{ end }}>Accueil</a>
     <a href="{{ "cas/" | relURL }}" data-v="cas"{{ if or (eq $.Params.vue "cas") (and (eq "cas" "voxfem") (eq $.Params.vue "validation")) }} aria-current="page"{{ end }}>Base de cas</a>
     <a href="{{ "rd/" | relURL }}" data-v="rd"{{ if or (eq $.Params.vue "rd") (and (eq "rd" "voxfem") (eq $.Params.vue "validation")) }} aria-current="page"{{ end }}>R&amp;D et ressources</a>
     <a href="{{ "voxfem/" | relURL }}" data-v="voxfem"{{ if or (eq $.Params.vue "voxfem") (and (eq "voxfem" "voxfem") (eq $.Params.vue "validation")) }} aria-current="page"{{ end }}>VoxFEM</a>
