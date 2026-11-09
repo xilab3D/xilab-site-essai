@@ -104,7 +104,7 @@
     <div class="sec-head">
       <div class="kick">Ressources</div>
       <h2>Expérimentations et rapports de recherche</h2>
-      <p>Les rapports complets sont accessibles avec un code, à demander via la page contact.</p>
+      <p>Chaque expérimentation et chaque rapport est disponible en PDF. Les rapports complets, au-delà des synthèses, sont accessibles sur demande via la page contact.</p>
     </div>
     <div class="filters" role="group" aria-label="Filtrer les ressources">
       <button type="button" class="chip" id="r-all" data-r="all" aria-pressed="true">Tout</button>
@@ -113,7 +113,7 @@
     </div>
     <div class="pubs" id="pubs">
       {{- range site.Data.ressources }}
-      <div class="pub" data-r="{{ .k }}"><span class="code">{{ .c }}</span><div><h4>{{ .t }}</h4><span class="meta">{{ if eq .k "EXP" }}Expérimentation{{ else }}Rapport de recherche{{ end }}</span></div>{{ with .url }}<a href="{{ . }}">Lire ›</a>{{ else }}<span class="soon">Sur demande</span>{{ end }}</div>
+      <div class="pub" data-r="{{ .k }}"><span class="code">{{ .c }}</span><div><h4>{{ .t }}</h4><span class="meta">{{ if eq .k "EXP" }}Expérimentation{{ else }}Rapport de recherche{{ end }}</span></div>{{ with .url }}<a href="{{ . | relURL }}" target="_blank" rel="noopener">PDF ›</a>{{ else }}<span class="soon">Sur demande</span>{{ end }}</div>
       {{- end }}
     </div>
   </div></section>

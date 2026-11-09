@@ -22,7 +22,7 @@
         <h3>{{ .t }}</h3>
         <dl><dt>Contexte</dt><dd>{{ .ctx }}</dd><dt>Verrou</dt><dd>{{ .lock }}</dd><dt>Notre action</dt><dd>{{ .did }}</dd></dl>
         <p class="res"><b>Résultat · </b>{{ .res }}</p>
-        {{ $src := .src }}<p class="tag" style="justify-self:start">{{ with .url }}<a href="{{ . }}">{{ $src }} ›</a>{{ else }}{{ $src }}{{ end }}</p>
+        {{ $src := .src }}<p class="tag" style="justify-self:start">{{ with .url }}<a href="{{ . | relURL }}" target="_blank" rel="noopener">{{ $src }} ›</a>{{ else }}{{ $src }}{{ end }}</p>
       </article>
       {{- end }}
       <p class="empty" id="cases-empty" hidden>Aucun cas publié pour cette étape pour l'instant.</p>

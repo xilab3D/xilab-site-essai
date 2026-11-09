@@ -3,19 +3,19 @@
   "c": "EXP_25_001",
   "k": "EXP",
   "t": "Étude éléments finis paramétrique d’une cornière (L-bracket) sous CalculiX",
-  "url": "https://xilab.tech/ressources/lbracket-pareto/"
+  "url": "docs/ressources/EXP_25_001_lbracket-pareto.pdf"
  },
  {
   "c": "EXP_25_002",
   "k": "EXP",
-  "t": "TopiX : optimisation topologique open source couplée à CalculiX",
-  "url": "https://xilab.tech/ressources/topix-optimisation-topologique/"
+  "t": "TopiX : optimisation topologique couplée à CalculiX",
+  "url": "docs/ressources/EXP_25_002_topix-optimisation-topologique.pdf"
  },
  {
   "c": "RAP_24_001",
   "k": "RAP",
   "t": "AINUM-e : notre programme R&D et le statut Jeune Entreprise Innovante",
-  "url": "https://xilab.tech/ressources/ainum-jei/"
+  "url": "docs/ressources/RAP_24_001_ainum-jei.pdf"
  },
  {
   "c": "RAP_24_002",
@@ -26,12 +26,12 @@
   "c": "RAP_25_001",
   "k": "RAP",
   "t": "Conception générative : état des lieux et expérimentations",
-  "url": "https://xilab.tech/ressources/conception-generative/"
+  "url": "docs/ressources/RAP_25_001_conception-generative.pdf"
  },
  {
   "c": "RAP_25_002",
   "k": "RAP",
   "t": "Signature graphonumérique : approche neuro-symbolique pour les jumeaux numériques",
-  "url": "https://xilab.tech/ressources/signature-graphonumerique/"
+  "url": "docs/ressources/RAP_25_002_signature-graphonumerique.pdf"
  }
 ]

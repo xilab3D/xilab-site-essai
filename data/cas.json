@@ -22,8 +22,8 @@
   "lock": "Les outils d’optimisation topologique sont souvent difficiles à intégrer dans une chaîne existante.",
   "did": "Développement de TopiX, couplé aux solveurs éléments finis CalculiX et VoxFEM.",
   "res": "Une chaîne d’optimisation reproductible, documentée dans nos ressources.",
-  "src": "Ressources",
-  "url": "https://xilab.tech/ressources/topix-optimisation-topologique/"
+  "src": "Rapport EXP_25_002",
+  "url": "docs/ressources/EXP_25_002_topix-optimisation-topologique.pdf"
  },
  {
   "f": [
