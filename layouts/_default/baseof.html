@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ if .IsHome }}Xilab.tech · R&D en ingénierie numérique{{ else }}{{ .Title }} · Xilab.tech{{ end }}</title>
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+{{- if site.Params.essai }}
+<meta name="robots" content="noindex, nofollow">
+{{- end }}
+<link rel="icon" href="{{ "img/logo-fonce.png" | relURL }}">
+<link rel="stylesheet" href="{{ "css/site.css" | relURL }}">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+{{ partial "header.html" . }}
+<main>
+{{ block "main" . }}{{ end }}
+</main>
+{{ partial "footer.html" . }}
+<script src="{{ "js/site.js" | relURL }}" defer></script>
+</body>
+</html>

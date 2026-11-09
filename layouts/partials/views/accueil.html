@@ -1,0 +1,79 @@
+<div class="view" id="v-accueil">
+  <div class="hero">
+    <canvas id="mesh" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div class="kick">R&amp;D en ingénierie numérique</div>
+      <h1>Nous développons les <em>chaînes numériques</em> de l'ingénierie</h1>
+      <p class="lead">De la géométrie au maillage, de la simulation à la fabrication additive, jusqu'au jumeau numérique, augmentées par une IA guidée par la physique.</p>
+      <div class="who"><span>Vous êtes</span>
+        <div class="seg" role="group" aria-label="Votre profil">
+          <button type="button" id="who-ed" data-who="ed" aria-pressed="true">Éditeur de logiciels</button>
+          <button type="button" id="who-rd" data-who="rd" aria-pressed="false">Service R&amp;D industriel</button>
+        </div>
+      </div>
+      <p class="promise" id="promise" aria-live="polite"><span data-who-txt="ed">{{ site.Data.promesses.ed }}</span><span data-who-txt="rd" hidden>{{ site.Data.promesses.rd }}</span></p>
+      <div class="badges"><span class="badge"><b>JEI</b> Jeune Entreprise Innovante</span><span class="badge">Atelier <b>SLS · SLA · FDM</b></span><span class="badge">Programme R&amp;D <b>AINUM-e</b></span><span class="badge">Partenaires <b>Adagos · CoreTechnologie</b></span><a class="badge" href="{{ "voxfem/" | relURL }}" style="text-decoration:none"><b>VoxFEM</b> développé par Xilab ›</a></div>
+    </div>
+  </div>
+
+  <section id="chaine"><div class="wrap">
+    <div class="sec-head">
+      <div class="kick">Ce que nous faisons</div>
+      <h2>Quatre expertises, une même chaîne</h2>
+      <p>Choisissez une étape pour voir ce que nous y faisons et ce que l'IA y apporte.</p>
+    </div>
+    <div class="chain" id="chain" role="tablist" aria-label="Étapes de la chaîne numérique">
+      {{- range $i, $d := site.Data.chaine }}
+      <button type="button" class="brick" role="tab" id="tab-{{ $d.id }}" data-id="{{ $d.id }}" aria-controls="detail-{{ $d.id }}" aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}"><span class="step">{{ upper $d.step }}</span><h3>{{ $d.t }}</h3><p>{{ $d.p }}</p><span class="ia"><span><b>IA</b> · {{ $d.ia }}</span></span></button>
+      {{- end }}
+    </div>
+    <div class="iaband">
+      <div><h3>IA guidée par la physique</h3><div class="sub">parcimonieuse · frugale · explicable</div></div>
+      <p>Des modèles réduits et interprétables construits avec peu de données, et une IA générative qui automatise la préparation des modèles.</p>
+      <label class="switch" for="ia-toggle"><input type="checkbox" id="ia-toggle"> Voir l'IA dans la chaîne</label>
+    </div>
+    {{- range $i, $d := site.Data.chaine }}
+    <div class="detail" id="detail-{{ $d.id }}" role="tabpanel" aria-labelledby="tab-{{ $d.id }}"{{ if ne $i 0 }} hidden{{ end }}>
+      <div><div class="kick">{{ $d.step }}</div><h3>{{ $d.t }}</h3><p class="intro">{{ $d.intro }}</p><ul class="dots">{{ range $d.li }}<li>{{ . }}</li>{{ end }}</ul></div>
+      <div class="side">
+        <div class="card hl" data-who-txt="ed"><div class="kick">Pour votre logiciel</div><p>{{ $d.ed }}</p></div>
+        <div class="card hl" data-who-txt="rd" hidden><div class="kick">Pour votre équipe R&amp;D</div><p>{{ $d.rd }}</p></div>
+        <div class="card"><div class="kick">Ce que l'IA apporte</div><p>{{ $d.iax }}</p></div>
+        <a class="linkbtn" href="{{ "cas/" | relURL }}#f-{{ $d.id }}">Voir les cas {{ if eq $d.id "fa" }}de préparation FA{{ else }}en {{ lower $d.t }}{{ end }}</a>
+        {{- with $d.more }}
+        <a class="linkbtn" href="{{ printf "%s/" .go | relURL }}{{ with .anchor }}#{{ . }}{{ end }}">{{ .label }}</a>
+        {{- end }}
+      </div>
+    </div>
+    {{- end }}
+    <div class="twin">
+      <div class="twin-txt"><span class="kick">Colonne vertébrale</span><h3>Le jumeau numérique</h3><p>Un jumeau numérique nécessite une maquette numérique fiable, des données structurées et des modèles physiques assez rapides pour suivre le réel. C'est exactement ce que produit notre chaîne, et ce sur quoi porte notre programme de recherche AINUM-e.</p></div>
+      <div class="twin-flow" aria-hidden="true"><span>Maquette à jour</span><i>+</i><span>Modèle réduit</span><i>+</i><span>Données structurées</span><i>=</i><span class="on">Jumeau numérique</span></div>
+      <a href="{{ "rd/" | relURL }}" class="linkbtn">Notre R&amp;D sur les jumeaux numériques</a>
+    </div>
+  </div></section>
+
+  <section class="alt"><div class="wrap">
+    <div class="sec-head">
+      <div class="kick">Travailler avec nous</div>
+      <h2>De l'audit à l'industrialisation</h2>
+      <p>L'objectif est de modéliser votre connaissance pour l'utiliser dans la maquette numérique.</p>
+    </div>
+    <div class="steps">
+      <div class="st"><div class="n">1</div><h3>Audit</h3><p>Diagnostic de votre chaîne numérique et feuille de route.</p></div>
+      <div class="st"><div class="n">2</div><h3>Faisabilité</h3><p>Étude ou benchmark ciblé pour lever un verrou.</p></div>
+      <div class="st"><div class="n">3</div><h3>Prototype</h3><p>Outil, connecteur ou modèle IA opérationnel.</p></div>
+      <div class="st"><div class="n">4</div><h3>Transfert / Formation</h3><p>Industrialisation chez vous et formation de vos équipes.</p></div>
+      <div class="st also"><h3>Et aussi</h3><p>Mise en œuvre sur vos cas réels : calcul, conception, préparation FA.</p></div>
+    </div>
+  </div></section>
+
+  <section><div class="wrap">
+    <div class="sec-head"><div class="kick">En savoir plus</div><h2>Des preuves, une méthode, une histoire</h2></div>
+    <div class="teaser">
+      <a href="{{ "cas/" | relURL }}" class="tz"><span class="kick">Base de cas</span><h3>Exemples de cas livrés</h3><p>Projets clients et démonstrateurs, classés par étape de la chaîne.</p></a>
+      <a href="{{ "rd/" | relURL }}" class="tz"><span class="kick">R&amp;D et ressources</span><h3>AINUM-e, atelier, publications</h3><p>Notre programme de recherche, nos moyens d'essai et nos rapports.</p></a>
+      <a href="{{ "histoire/" | relURL }}" class="tz"><span class="kick">Histoire</span><h3>La R&amp;D de pointe, avec l'agilité d'une petite équipe</h3><p>D'où vient Xilab, qui nous sommes et ce qui compte pour nous.</p></a>
+    </div>
+  </div></section>
+</div>

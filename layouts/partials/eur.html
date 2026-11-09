@@ -1,0 +1,1 @@
+{{- $x := . -}}{{- if eq (math.Floor $x) $x -}}{{ lang.FormatNumberCustom 0 $x "- ,  " }} €{{- else -}}{{ lang.FormatNumberCustom 2 $x "- ,  " }} €{{- end -}}

@@ -1,0 +1,76 @@
+[
+ {
+  "id": "interop",
+  "step": "Étape 1",
+  "t": "Interopérabilité",
+  "p": "Faire dialoguer modeleurs CAO, solveurs et formats métiers.",
+  "ia": "connecteurs et scripts de conversion générés",
+  "intro": "Nous construisons des passerelles et des méthodologies pour relier géométries, maillages et résultats.",
+  "li": [
+   "Connecteurs entre modeleurs CAO et outils de simulation",
+   "Conversion et réparation de formats (STEP, maillages, résultats)",
+   "Automatisation des flux de données entre outils"
+  ],
+  "ed": "Nous développons les connecteurs et l’import/export de votre logiciel, testés sur des jeux de données réels.",
+  "rd": "Nous supprimons les ressaisies et les pertes de données entre vos outils de conception et de calcul.",
+  "iax": "Génération assistée de connecteurs et de scripts de conversion, assistants qui guident la préparation des données."
+ },
+ {
+  "id": "mesh",
+  "step": "Étape 2",
+  "t": "Maillage",
+  "p": "Préparation géométrique, maillages robustes et qualifiés.",
+  "ia": "prédiction de qualité, raffinement adaptatif",
+  "intro": "Nous travaillons sur la liaison CAO-calcul pour faciliter la création de maillages.",
+  "li": [
+   "Nettoyage et simplification géométrique",
+   "Stratégies de maillage et critères de qualité",
+   "Développement de briques de maillage sur mesure"
+  ],
+  "ed": "Nous concevons et validons des briques de maillage ou de préparation géométrique intégrables à votre produit.",
+  "rd": "Nous fiabilisons vos maillages et réduisons le temps passé en préparation de modèles.",
+  "iax": "Prédiction des zones à raffiner et de la qualité attendue, adaptation automatique du maillage.",
+  "more": {
+   "go": "voxfem",
+   "label": "Ou s’en passer : découvrir VoxFEM"
+  }
+ },
+ {
+  "id": "bench",
+  "step": "Étape 3",
+  "t": "Benchmark simulation",
+  "p": "Comparer et qualifier solveurs et méthodes.",
+  "ia": "métamodèles pour explorer à moindre coût",
+  "intro": "Quel solveur, quelle méthode, quelle précision pour quel coût ? Nous répondons avec des cas tests et des critères objectifs.",
+  "li": [
+   "Cas tests de référence et protocoles de comparaison",
+   "Qualification de solveurs et de méthodes numériques",
+   "Analyse précision / temps de calcul"
+  ],
+  "ed": "Nous qualifions votre solveur face à l’état de l’art et produisons des benchmarks publiables.",
+  "rd": "Nous vous aidons à choisir et à valider vos outils de simulation sur vos propres cas.",
+  "iax": "Métamodèles construits sur quelques simulations pour explorer de larges plages de paramètres."
+ },
+ {
+  "id": "fa",
+  "step": "Étape 4",
+  "t": "Préparation FA",
+  "p": "Modèles prêts à imprimer, testés dans notre atelier SLS, SLA, FDM.",
+  "ia": "prédiction des déformations et zones à risque",
+  "intro": "Entre la CAO et la machine, la préparation décide de la réussite de la pièce. Nous outillons cette étape et la mettons à l’épreuve dans notre propre atelier de fabrication.",
+  "li": [
+   "Atelier de fabrication pour nos essais R&D : machines SLS, SLA et FDM",
+   "Orientation et stratégies de supports",
+   "Préparation et contrôle des modèles avant fabrication",
+   "Outils de préparation dédiés à vos procédés"
+  ],
+  "ed": "Nous développons des fonctions de préparation FA pour votre logiciel, validées sur pièces imprimées dans notre atelier.",
+  "rd": "Nous réduisons les essais ratés en préparant et en contrôlant vos modèles avant impression.",
+  "iax": "Prédiction des déformations et des zones à risque pour orienter et supporter plus juste.",
+  "more": {
+   "go": "rd",
+   "anchor": "atelier",
+   "label": "Découvrir l’atelier"
+  }
+ }
+]

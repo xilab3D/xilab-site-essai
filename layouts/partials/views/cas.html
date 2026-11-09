@@ -1,0 +1,31 @@
+<div class="view" id="v-cas">
+  <div class="pagehead"><div class="wrap">
+    <div class="kick">Base de cas</div>
+    <h1>Exemples de cas livrés</h1>
+    <p>Filtrez par étape de la chaîne ou par type de projet. Les noms des entreprises accompagnées sont volontairement cachés.</p>
+  </div></div>
+  <section><div class="wrap">
+    <div class="filters" role="group" aria-label="Filtrer par étape">
+      <span class="lab">Étape</span>
+      <button type="button" class="chip" id="f-all" data-f="all" aria-pressed="true">Toutes</button>
+      <button type="button" class="chip" id="f-interop" data-f="interop" aria-pressed="false">Interopérabilité</button>
+      <button type="button" class="chip" id="f-mesh" data-f="mesh" aria-pressed="false">Maillage</button>
+      <button type="button" class="chip" id="f-bench" data-f="bench" aria-pressed="false">Benchmark</button>
+      <button type="button" class="chip" id="f-fa" data-f="fa" aria-pressed="false">Préparation FA</button>
+      <button type="button" class="chip" id="f-geo" data-f="geo" aria-pressed="false">Modélisation paramétrique</button>
+      <button type="button" class="chip" id="f-ia" data-f="ia" aria-pressed="false">IA</button>
+    </div>
+    <div class="cases" id="cases">
+      {{- range site.Data.cas }}
+      <article class="case" data-f="{{ delimit .f " " }}">
+        <div class="tags"><span class="tag or">{{ .type }}</span>{{ range .f }}<span class="tag">{{ index site.Data.etiquettes . }}</span>{{ end }}</div>
+        <h3>{{ .t }}</h3>
+        <dl><dt>Contexte</dt><dd>{{ .ctx }}</dd><dt>Verrou</dt><dd>{{ .lock }}</dd><dt>Notre action</dt><dd>{{ .did }}</dd></dl>
+        <p class="res"><b>Résultat · </b>{{ .res }}</p>
+        {{ $src := .src }}<p class="tag" style="justify-self:start">{{ with .url }}<a href="{{ . }}">{{ $src }} ›</a>{{ else }}{{ $src }}{{ end }}</p>
+      </article>
+      {{- end }}
+      <p class="empty" id="cases-empty" hidden>Aucun cas publié pour cette étape pour l'instant.</p>
+    </div>
+  </div></section>
+</div>

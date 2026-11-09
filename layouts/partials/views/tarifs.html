@@ -1,0 +1,37 @@
+<div class="view" id="v-tarifs">
+  <div class="pagehead"><div class="wrap">
+    <div class="kick">Tarifs</div>
+    <h1>Xilab peut devenir votre laboratoire R&amp;D indépendant en ingénierie numérique</h1>
+    <p>Nos prix sont publics. Vous réservez un volume de jours d'ingénierie, nous le mettons au service de vos sujets, avec un point d'avancement à chaque étape.</p>
+  </div></div>
+
+  <section><div class="wrap">
+    <div class="sec-head"><div class="kick">Forfaits laboratoire R&amp;D</div><h2>Plus vous réservez, moins le jour coûte</h2><p>Jours d'ingénieur R&amp;D à utiliser sur 12 mois, sur un ou plusieurs sujets : audit, benchmark, prototype, transfert, formation.</p><p class="pk-exp"><b>Expertise comprise :</b> dans les forfaits, les jours d'expert sont facturés au prix d'un jour ingénieur.</p></div>
+    <div class="packs" id="packs">
+      {{- $j := 750.0 }}
+      {{- range $i, $p := slice (slice 15 20) (slice 30 25) (slice 45 30) }}
+      {{- $d := index $p 0 }}{{ $r := index $p 1 }}
+      {{- $full := mul $j $d }}{{ $net := mul $full (sub 1.0 (div (float $r) 100.0)) }}{{ $pj := mul $j (sub 1.0 (div (float $r) 100.0)) }}
+      <div class="pack{{ if eq $i 1 }} best{{ end }}"><span class="days">{{ $d }} jours</span><span class="off">−{{ $r }} %</span><span class="pv">{{ partial "eur" $net }} <small>HT</small></span><span class="was">au lieu de <s>{{ partial "eur" $full }}</s></span><span class="pd">soit {{ partial "eur" $pj }} HT par jour</span></div>
+      {{- end }}
+    </div>
+    <p class="note" style="margin-top:16px">Au-delà de 45 jours, ou pour un programme pluriannuel : <a href="{{ "contact/" | relURL }}" class="linkbtn">sur demande</a>.</p>
+  </div></section>
+
+  <section class="alt"><div class="wrap grid2">
+    <div>
+      <div class="sec-head"><div class="kick">À la journée</div><h2>Pour un besoin ponctuel</h2><p>Prix hors taxes, journée de 7 heures.</p></div>
+      <div class="rates">
+        <div class="rate"><div><h3>Expert</h3><p>Modélisation de la connaissance, simulation avancée, IA, développement logiciel, veille R&amp;D.</p></div><span class="rv">1 050 € <small>HT / jour</small></span></div>
+        <div class="rate"><div><h3>Ingénieur R&amp;D</h3><p>Conception CAO, simulation de pré-dimensionnement, préparation de modèles, optimisation topologique.</p></div><span class="rv">750 € <small>HT / jour</small></span></div>
+        <div class="rate"><div><h3>Technicien</h3><p>Fabrication additive dans notre atelier, scan 3D, usinage numérique, post-traitement.</p></div><span class="rv">490 € <small>HT / jour</small></span></div>
+      </div>
+    </div>
+    <div class="side">
+      <div class="card" style="background:var(--bg)"><span class="kick">Toujours inclus</span>
+        <ul class="dots"><li>Premier échange gratuit de 30 minutes</li><li>Devis détaillé sous 48 h</li><li>Compte rendu écrit à chaque étape</li><li>Fichiers sources livrés : CAO, maillages, scripts</li><li>Un mois de support après livraison</li><li>Facturation à la livraison, ou mensuelle pour les missions longues</li></ul></div>
+      <div class="card" style="background:var(--bg)"><span class="kick">Formations</span><p>Sur devis selon la durée, le contenu et le format, sur site ou à distance.</p></div>
+      <div class="card hl"><span class="kick">Logiciel</span><p>VoxFEM : 900 € HT, licence à vie. <a href="{{ "voxfem/" | relURL }}#tarifs" class="linkbtn">Voir le détail</a></p></div>
+    </div>
+  </div></section>
+</div>

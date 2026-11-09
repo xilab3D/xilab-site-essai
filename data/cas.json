@@ -1,0 +1,67 @@
+[
+ {
+  "f": [
+   "bench",
+   "ia"
+  ],
+  "type": "Cas industriel R&D",
+  "t": "Accélérer une simulation CFD d’hydrogène",
+  "ctx": "Fuite d’hydrogène en contexte aéronautique : modèles thermiques, de compressibilité et de turbulence.",
+  "lock": "Un calcul de référence de 5 jours, incompatible avec l’exploration de nombreux scénarios.",
+  "did": "Simulations CFD sous OpenFOAM, puis apprentissage d’un modèle réduit avec l’IA parcimonieuse NeurEco (Adagos).",
+  "res": "Temps de calcul fortement réduit, précision physique maintenue.",
+  "src": "Programme AINUM-e"
+ },
+ {
+  "f": [
+   "fa"
+  ],
+  "type": "Expérimentation EXP_25_002",
+  "t": "TopiX : optimisation topologique",
+  "ctx": "Concevoir des pièces allégées pour la fabrication additive.",
+  "lock": "Les outils d’optimisation topologique sont souvent difficiles à intégrer dans une chaîne existante.",
+  "did": "Développement de TopiX, couplé aux solveurs éléments finis CalculiX et VoxFEM.",
+  "res": "Une chaîne d’optimisation reproductible, documentée dans nos ressources.",
+  "src": "Ressources",
+  "url": "https://xilab.tech/ressources/topix-optimisation-topologique/"
+ },
+ {
+  "f": [
+   "geo"
+  ],
+  "type": "Cas industriel R&D",
+  "t": "Modèle paramétré de compresseur Scroll",
+  "ctx": "Automatiser la création de la géométrie d’un compresseur Scroll pour en faire varier les paramètres et étudier les pressions dans les chambres en mouvement.",
+  "lock": "Développer une approche mathématique et géométrique des spirales, et choisir un outil adapté à une PME.",
+  "did": "Développement de la méthodologie et du modèle paramétré sous Grasshopper (Rhino 3D).",
+  "res": "La connaissance du client est modélisée : géométrie créée automatiquement et simulation géométrique du Scroll en mouvement.",
+  "src": "Projet client"
+ },
+ {
+  "f": [
+   "interop",
+   "mesh",
+   "bench",
+   "fa"
+  ],
+  "type": "Cas industriel R&D",
+  "t": "Relier préparation FA métal et simulation LPBF",
+  "ctx": "Faire communiquer un outil de préparation de modèles pour la fabrication additive métal et un outil de simulation du procédé LPBF.",
+  "lock": "Valider le solveur LPBF et fiabiliser le passage de la géométrie au maillage.",
+  "did": "Réalisation d’un benchmark, essais et qualification des modèles, formation des équipes.",
+  "res": "Une chaîne préparation → simulation LPBF qualifiée, et des équipes formées à son usage.",
+  "src": "Projet client"
+ },
+ {
+  "f": [
+   "bench"
+  ],
+  "type": "Cas industriel R&D",
+  "t": "Simulation CFD d’une éolienne à axe vertical innovante",
+  "ctx": "Une éolienne à axe vertical de conception nouvelle, dont il faut comprendre le comportement aérodynamique et vérifier la tenue mécanique.",
+  "lock": "Simuler des pales en rotation, dont l’écoulement change à chaque instant, sur toute la plage de vitesses de vent.",
+  "did": "Essais statiques sur des profils, pré-dimensionnement de la tenue mécanique, puis analyse des pales en mouvement à différentes vitesses de vent sous OpenFOAM.",
+  "res": "Le comportement aérodynamique de l’éolienne caractérisé vitesse par vitesse, et une structure pré-dimensionnée.",
+  "src": "Projet client"
+ }
+]

@@ -1,0 +1,26 @@
+<div class="view" id="v-validation">
+  <div class="pagehead"><div class="wrap">
+    <a href="{{ "voxfem/" | relURL }}" class="linkbtn">‹ Retour à VoxFEM</a>
+    <div class="kick">VoxFEM · Cas tests</div>
+    <h1>L'état de validation du moteur</h1>
+    <p>Chaque cas compare un calcul VoxFEM à une solution de référence : solution analytique, benchmark NAFEMS ou essai publié. La campagne complète est rejouée à chaque modification du code des solveurs.</p>
+    {{- $v := site.Data.validation }}{{ $ko := 0 }}{{ $n := 0 }}{{ $cats := slice }}
+    {{- range $v.cas }}{{ $n = add $n (len .r) }}{{ $bad := false }}{{ range .r }}{{ if not (index . 5) }}{{ $bad = true }}{{ end }}{{ end }}{{ if $bad }}{{ $ko = add $ko 1 }}{{ end }}{{ if not (in $cats .cat) }}{{ $cats = $cats | append .cat }}{{ end }}{{ end }}
+    {{- $nc := len $v.cas }}
+    <div class="vl-meta" id="vl-meta"><span class="chip2">Campagne du {{ time.Format ":date_long" (time.AsTime $v.date) }}</span><span class="chip2">{{ $nc }} cas · {{ $n }} grandeurs comparées</span><span class="chip2 ok">{{ sub $nc $ko }} cas conformes</span>{{ if gt $ko 0 }}<span class="chip2 ko">{{ $ko }} hors tolérance</span>{{ end }}<span class="chip2">{{ math.Round (div (float $v.duree_s) 60) }} min de calcul</span></div>
+  </div></div>
+  <section><div class="wrap">
+    <div class="filters" role="group" aria-label="Filtrer les cas tests" id="vl-filters"><button type="button" class="chip" data-vl="all" aria-pressed="true">Tous ({{ $nc }})</button>{{ range $cats }}<button type="button" class="chip" data-vl="{{ . }}" aria-pressed="false">{{ . }}</button>{{ end }}<button type="button" class="chip" data-vl="ko" aria-pressed="false">Hors tolérance ({{ $ko }})</button></div>
+    <div class="vr vr-head vl-head" aria-hidden="true"><span>Cas test</span><span class="bar2 lab"><span class="main"><span>0 %</span><span>5 %</span><span>10 %</span></span><span class="brk"></span><span class="tail">100 %</span></span><span style="text-align:right">Écart</span></div>
+    <div class="vl-list" id="vl-list">
+      {{- range $v.cas }}
+      {{- $w := index .r 0 }}{{ $bad := false }}{{ range .r }}{{ if gt (index . 3) (index $w 3) }}{{ $w = . }}{{ end }}{{ if not (index . 5) }}{{ $bad = true }}{{ end }}{{ end }}
+      {{- $e := float (index $w 3) }}{{ $t := float (index $w 4) }}
+      <details class="vl-case" data-cat="{{ .cat }}" data-ko="{{ $bad }}"><summary><div class="vr"><span class="vl-name"><span><b>{{ .c }}</b>{{ .t }}{{ if $bad }}<span class="vl-ko">hors tolérance</span>{{ end }}</span><small>{{ .cat }}</small></span><span class="bar2" aria-hidden="true"><span class="main"><i class="{{ if gt $e 10.0 }}over{{ end }}" style="width:{{ mul (math.Min $e 10.0) 10 }}%"></i><span class="tol" style="left:{{ mul (math.Min $t 10.0) 10 }}%"></span></span><span class="brk">//</span><span class="tail"></span></span><b>{{ lang.FormatNumberCustom 2 $e "- ,  " }} %</b></div></summary>
+        <div class="vl-body"><p class="refl">Référence : {{ .ref }}</p><div class="vl-tbl"><table><thead><tr><th>Grandeur</th><th>Référence</th><th>VoxFEM</th><th>Écart</th><th>Tolérance</th><th>Statut</th></tr></thead><tbody>{{ range .r }}<tr><td>{{ index . 0 }}</td><td>{{ index . 1 }}</td><td>{{ index . 2 }}</td><td>{{ lang.FormatNumberCustom 2 (float (index . 3)) "- ,  " }} %</td><td>{{ lang.FormatNumberCustom 0 (float (index . 4)) "- ,  " }} %</td><td class="st{{ if not (index . 5) }} ko{{ end }}">{{ if index . 5 }}conforme{{ else }}hors tolérance{{ end }}</td></tr>{{ end }}</tbody></table></div></div></details>
+      {{- end }}
+    </div>
+    <p class="vl-legend"><span class="tol-mk" aria-hidden="true"></span> Tolérance admise pour la grandeur la plus éloignée de la référence. Cliquez sur un cas pour voir toutes ses grandeurs.</p>
+    <p class="note" style="margin-top:16px"><b>Site d'essai</b> · Données lues dans <code>data/validation.json</code>, issu de la campagne de non-régression de VoxFEM. Remplacer ce fichier suffit à mettre la page à jour.</p>
+  </div></div></section>
+</div>

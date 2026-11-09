@@ -1,0 +1,2 @@
+User-agent: *
+{{ if site.Params.essai }}Disallow: /{{ else }}Allow: /{{ end }}
