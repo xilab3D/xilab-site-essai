@@ -414,3 +414,13 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
 
 a.tz{text-decoration:none;color:inherit}
 a.btn{display:inline-block}
+
+/* VoxFEM, plate-forme : bloc pleine largeur sur deux colonnes */
+.tool-main{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);column-gap:48px;align-items:start;padding:32px}
+.tool-main>.kick{grid-column:1;grid-row:1}
+.tool-main>h3{grid-column:1;grid-row:2}
+.tool-main>p{grid-column:1;grid-row:3/span 2;max-width:none}
+.tool-main>.tool-tags{grid-column:2;grid-row:1/span 2;align-self:end}
+.tool-main>.tool-flow{grid-column:2;grid-row:3}
+.tool-main>.btn{grid-column:2;grid-row:4;justify-self:start}
+@media (max-width:900px){.tool-main{grid-template-columns:minmax(0,1fr);padding:24px}.tool-main>*{grid-column:1!important;grid-row:auto!important}}

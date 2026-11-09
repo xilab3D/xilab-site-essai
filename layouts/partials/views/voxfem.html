@@ -49,10 +49,10 @@
       <figcaption><span class="kick">La méthode en vidéo · 1 min 32</span><h3>Des éléments finis sur votre pièce, sans maillage à produire</h3><p>Le principe vu sur le support mural à palier : le STL devient grille de voxels, puis résultats sur la vraie surface. Pourquoi c'est rapide, comment l'effet d'escalier est corrigé (de −10 % à −0,5 % au bord d'un trou), les chocs et les cas tests.</p></figcaption>
     </figure>
     <ol class="vx-steps">
-      <li><span class="n">1</span><h3>Voxélisation par parité</h3><p>Pour chaque colonne de la grille, on compte les traversées du STL. Robuste sur des STL imparfaits et insensible au sens des normales.</p></li>
+      <li><span class="n">1</span><h3>Voxélisation par test dedans / dehors</h3><p>Pour chaque colonne de la grille, on compte combien de fois elle traverse la surface du STL : un nombre impair, le voxel est dans la pièce. Robuste sur des STL imparfaits et insensible au sens des normales.</p></li>
       <li><span class="n">2</span><h3>Fraction de matière</h3><p>Chaque voxel de bord est sous-échantillonné et sa raideur pondérée par sa part de matière, ce qui corrige l'effet d'escalier. Option peau précise pour les contraintes de surface.</p></li>
       <li><span class="n">3</span><h3>Un seul élément</h3><p>Tous les voxels étant identiques, la matrice élémentaire n'est calculée qu'une fois.</p></li>
-      <li><span class="n">4</span><h3>Multigrille sans matrice</h3><p>Le système n'est jamais assemblé : produit voxel par voxel, quatre fois plus rapide qu'un AMG à 2 millions de degrés de liberté. Option GPU, NVIDIA ou puces Apple.</p></li>
+      <li><span class="n">4</span><h3>Multigrille sans matrice assemblée</h3><p>Tous les voxels étant identiques, la grande matrice du système n'est jamais construite : le calcul se fait voxel par voxel, à la volée. Moins de mémoire, et quatre fois plus rapide qu'un solveur AMG classique à 2 millions d'inconnues. Option GPU, NVIDIA ou puces Apple.</p></li>
       <li><span class="n">5</span><span class="rd-tag">Phase R&amp;D</span><h3>IA sur la grille</h3><p>En essai : réseaux U-Net 3D entraînés sur des cas générés par VoxFEM lui-même, pour accélérer les prédictions.</p></li>
     </ol>
   </div></section>
