@@ -32,7 +32,7 @@
       </figure>
       <figure class="vid">
         <video id="vid-topo" controls preload="none" playsinline poster="{{ "media/" | relURL }}voxfem_topo.jpg" src="{{ "media/" | relURL }}voxfem_topo.mp4"></video>
-        <figcaption><span class="kick">Optimisation topologique · 1 min 17</span><h3>Un support à chape en Inconel 718, allégé de 89 %</h3><p>D'un simple bloc à la pièce allégée : 10 % de matière gardée, 4 cas de charge, surplomb de 45° et épaisseur minimale pour l'impression LPBF. 1,02 kg devient 0,115 kg.</p></figcaption>
+        <figcaption><span class="kick">Optimisation topologique · 1 min 17</span><h3>Un support à chape en Inconel 718, allégé de 89 % (blocs fonctionnels au départ)</h3><p>D'un simple bloc à la pièce allégée : 10 % de matière gardée, 4 cas de charge, surplomb de 45° et épaisseur minimale pour l'impression 3D. 1,02 kg devient 0,115 kg.</p></figcaption>
       </figure>
     </div>
     <p class="note" style="margin-top:16px"><b>Versions de travail</b> · Une troisième vidéo présente la méthode, plus bas. D'autres sont en préparation.</p>
@@ -60,12 +60,12 @@
   <section class="alt"><div class="wrap">
     <div class="sec-head"><div class="kick">Analyses</div><h2>Six solveurs, une même grille</h2><p>Une seule licence ouvre les six solveurs.</p></div>
     <div class="vx-solvers">
-      <div class="sv"><span class="code">VXF-LIN</span><h3>Statique linéaire</h3><p>Élasticité isotrope, élément H8 à modes incompatibles.</p></div>
+      <div class="sv"><span class="code">VXF-LIN</span><h3>Statique linéaire</h3><p>Élasticité isotrope, petits déplacements.</p></div>
       <div class="sv"><span class="code">VXF-NL</span><h3>Non linéaire</h3><p>Grands déplacements et plasticité de von Mises, cumulables.</p></div>
-      <div class="sv"><span class="code">VXF-MOD</span><h3>Modale</h3><p>Premiers modes propres, masse cohérente.</p></div>
+      <div class="sv"><span class="code">VXF-MOD</span><h3>Modale</h3><p>Premiers modes propres et fréquences de vibration.</p></div>
       <div class="sv"><span class="code">VXF-TOP</span><h3>Optimisation topologique</h3><p>SIMP, plusieurs cas de charge, symétries, surplomb et épaisseur minimale pour la fabrication additive.</p></div>
       <div class="sv"><span class="code">VXF-EXP</span><h3>Dynamique rapide</h3><p>Explicite : impacts, ondes de choc, loi de Johnson-Cook, rupture.</p></div>
-      <div class="sv sv-new"><span class="code">VXF-CIN <em>nouveau</em></span><h3>Mesures essais physiques</h3><p>Corrélation d'images : l'essai filmé est comparé au calcul, champ de déplacement contre champ de déplacement, avec un rapport essai / calcul.</p></div>
+      <div class="sv sv-new"><span class="code">VXF-CIN <em>expérimental</em></span><h3>Mesures essais physiques</h3><p>Corrélation d'images : l'essai filmé est comparé au calcul, champ de déplacement contre champ de déplacement, avec un rapport essai / calcul.</p></div>
     </div>
   </div></section>
 
@@ -88,7 +88,7 @@
     <div class="side">
       <div class="card hl"><span class="kick">Transparence</span><p>Sur une plaque trouée, la grille brute sous-estime le pic de contrainte de 10 %. Les options voxels lissés et peau précise le ramènent à 0,5 % et 1,7 %. Les cas tests sont exécutés à chaque modification du code des solveurs.</p></div>
       <div class="card"><span class="kick">Limites connues et pistes</span>
-        <ul class="dots"><li>Pics de contrainte locaux : voxel fin nécessaire. Piste : affinage local (octree)</li><li>Appuis glissants pas encore gérés</li><li>Plasticité en petites déformations seulement</li></ul></div>
+        <ul class="dots"><li>Outil de prédimensionnement</li><li>Non pertinent sur les parois très fines</li><li>Pics de contrainte locaux : voxel fin nécessaire</li><li>Appuis glissants pas encore gérés</li><li>Plasticité en petites déformations seulement</li></ul></div>
     </div>
   </div></section>
 
@@ -97,19 +97,20 @@
     <div class="grid3">
       <div class="pill" style="background:var(--bg)"><h3>Un processus guidé</h3><p>Huit étapes, du STL aux résultats 3D dans le navigateur. Alésages et arbres reconnus automatiquement pour poser appuis et efforts.</p></div>
       <div class="pill" style="background:var(--bg)"><h3>Une bibliothèque de pièces</h3><p>Support mural à palier, support à chape, support en arbre, pont du NIST AM Bench, lunettes de protection : des études prêtes à calculer en un clic.</p></div>
-      <div class="pill" style="background:var(--bg)"><h3>Chez vous ou sur serveur</h3><p>Installation Windows ou plateforme client-serveur, résultats dans le navigateur ou ParaView, rapport Word complet en un clic.</p></div>
+      <div class="pill" style="background:var(--bg)"><h3>Installation locale</h3><p>Installateur Windows en local. Logiciel prévu pour le client-serveur, non déployé pour le moment. Résultats dans l'outil ou exportables vers ParaView, rapport de calcul automatique.</p></div>
     </div>
   </div></section>
 
   <section id="tarifs"><div class="wrap">
     <div class="sec-head"><div class="kick">Tarifs</div><h2>Une licence, tous les modules, à vie</h2><p>Pas d'abonnement obligatoire : vous achetez VoxFEM une fois et vous le gardez.</p></div>
+    <p class="note" style="margin-bottom:20px"><b>Version bêta</b> · VoxFEM est actuellement en test auprès d'utilisateurs pilotes. Les tarifs ci-dessous sont ceux de la version commerciale. Pour l'évaluer sur vos propres pièces, une licence d'un mois est possible.</p>
     <div class="price">
       <div class="pr-main">
         <span class="kick">Licence perpétuelle</span>
         <p class="pr-v">900 € <small>HT</small></p>
         <p class="pr-l">licence payée une fois, utilisable à vie, pour un poste</p>
         <ul class="dots"><li>Statique linéaire</li><li>Non linéaire : grands déplacements et plasticité</li><li>Analyse modale</li><li>Optimisation topologique, avec règles de fabrication additive</li><li>Dynamique rapide</li><li>Mesure par caméra : comparaison essai / calcul</li><li>Bibliothèque de pièces et rapport Word</li></ul>
-        <a href="{{ "contact/" | relURL }}" class="btn" style="justify-self:start">Demander une démonstration</a>
+        <div class="row"><a href="{{ "contact/" | relURL }}" class="btn">Demander une démonstration</a><a href="{{ "contact/" | relURL }}" class="btn ghost">Demander une licence d'un mois</a></div>
       </div>
       <div class="pr-side">
         <span class="kick">Maintenance</span>
