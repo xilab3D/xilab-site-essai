@@ -14,7 +14,7 @@
     <div class="figs">
       <div class="fig"><span class="v">2,6 s</span><span class="l">pour 503 424 inconnues, sur un ordinateur portable</span></div>
       <div class="fig"><span class="v">6</span><span class="l">solveurs, du statique linéaire à la dynamique rapide, jusqu'à la comparaison avec un essai filmé</span></div>
-      <div class="fig"><span class="v">25</span><span class="l">cas de validation documentés : analytique, NAFEMS, essais</span></div>
+      <div class="fig"><span class="v">41</span><span class="l">cas de validation documentés : analytique, NAFEMS, code_aster, essais</span></div>
       <div class="fig"><span class="v">8</span><span class="l">étapes guidées, du STL au rapport Word</span></div>
     </div>
   </div></section>
@@ -71,19 +71,19 @@
 
   <section><div class="wrap grid2">
     <div>
-      <div class="sec-head"><div class="kick">Validation</div><h2>Vérifié contre la théorie et l'essai</h2><p class="vx-count"><b>25</b> cas de référence testés : solutions analytiques, benchmarks NAFEMS et essais publiés, en linéaire, non linéaire, modal et dynamique rapide.</p><p>Quelques résultats, écart à la référence en valeur absolue :</p></div>
+      <div class="sec-head"><div class="kick">Validation</div><h2>Vérifié contre la théorie et l'essai</h2><p class="vx-count"><b>41</b> cas de référence testés : solutions analytiques, benchmarks NAFEMS et code_aster, essais publiés et essai filmé, en linéaire, non linéaire, modal, dynamique rapide, optimisation topologique et mesure par caméra.</p><p>Quelques résultats, écart à la référence en valeur absolue :</p></div>
       <div class="vx-val" role="table" aria-label="Écart de VoxFEM à la référence, en valeur absolue">
         <div class="vr vr-head" aria-hidden="true"><span></span><span class="bar2 lab"><span class="main"><span>0 %</span><span>5 %</span><span>10 %</span></span><span class="brk"></span><span class="tail">100 %</span></span><span></span></div>
         <div class="vr" role="row"><span role="cell">VT02 - Poutre console en flexion</span><span class="bar2" role="cell" aria-hidden="true"><span class="main"><i style="width:7.6%"></i></span><span class="brk">//</span><span class="tail"></span></span><b role="cell">0,76 %</b></div>
         <div class="vr" role="row"><span role="cell">VT03 - Torsion d'une barre carrée</span><span class="bar2" role="cell" aria-hidden="true"><span class="main"><i style="width:2.0%"></i></span><span class="brk">//</span><span class="tail"></span></span><b role="cell">0,20 %</b></div>
         <div class="vr" role="row"><span role="cell">VT14 - NAFEMS LE1, voxels lissés</span><span class="bar2" role="cell" aria-hidden="true"><span class="main"><i style="width:31.0%"></i></span><span class="brk">//</span><span class="tail"></span></span><b role="cell">3,10 %</b></div>
-        <div class="vr" role="row"><span role="cell">VT08 - Modes de flexion d'une console</span><span class="bar2" role="cell" aria-hidden="true"><span class="main"><i style="width:4.3%"></i></span><span class="brk">//</span><span class="tail"></span></span><b role="cell">0,43 %</b></div>
-        <div class="vr" role="row"><span role="cell">VT10 - Console en grands déplacements (elastica)</span><span class="bar2" role="cell" aria-hidden="true"><span class="main"><i style="width:12.1%"></i></span><span class="brk">//</span><span class="tail"></span></span><b role="cell">1,21 %</b></div>
+        <div class="vr" role="row"><span role="cell">VT33 - Poutre vrillée de MacNeal-Harder (code_aster SSLS108)</span><span class="bar2" role="cell" aria-hidden="true"><span class="main"><i style="width:6.2%"></i></span><span class="brk">//</span><span class="tail"></span></span><b role="cell">0,62 %</b></div>
+        <div class="vr" role="row"><span role="cell">VT30 - Plaque PMMA filmée en traction (essai réel)</span><span class="bar2" role="cell" aria-hidden="true"><span class="main"><i style="width:28.8%"></i></span><span class="brk">//</span><span class="tail"></span></span><b role="cell">2,88 %</b></div>
         <div class="vr" role="row"><span role="cell">VT12 - Cylindre épais élasto-plastique (Hill)</span><span class="bar2" role="cell" aria-hidden="true"><span class="main"><i style="width:25.3%"></i></span><span class="brk">//</span><span class="tail"></span></span><b role="cell">2,53 %</b></div>
         <div class="vr" role="row"><span role="cell">VT22 - Choc de Hertz d'une bille rigide</span><span class="bar2" role="cell" aria-hidden="true"><span class="main"><i style="width:37.1%"></i></span><span class="brk">//</span><span class="tail"></span></span><b role="cell">3,71 %</b></div>
-        <div class="vr" role="row"><span role="cell">VT25 - Essai de projectile à 140 m/s (Sarıkaya, contrôle)</span><span class="bar2" role="cell" aria-hidden="true"><span class="main"><i style="width:42.4%"></i></span><span class="brk">//</span><span class="tail"></span></span><b role="cell">4,24 %</b></div>
+        <div class="vr" role="row"><span role="cell">VT25 - Essai de projectile à 140 m/s (Sarıkaya, contrôle)</span><span class="bar2" role="cell" aria-hidden="true"><span class="main"><i style="width:41.7%"></i></span><span class="brk">//</span><span class="tail"></span></span><b role="cell">4,17 %</b></div>
       </div>
-      <a href="{{ "voxfem/validation/" | relURL }}" class="btn ghost" style="margin-top:16px">Voir les résultats des 25 cas tests</a>
+      <a href="{{ "voxfem/validation/" | relURL }}" class="btn ghost" style="margin-top:16px">Voir les résultats des 41 cas tests</a>
     </div>
     <div class="side">
       <div class="card hl"><span class="kick">Transparence</span><p>Sur une plaque trouée, la grille brute sous-estime le pic de contrainte de 10 %. Les options voxels lissés et peau précise le ramènent à 0,5 % et 1,7 %. Les cas tests sont exécutés à chaque modification du code des solveurs.</p></div>

@@ -3,7 +3,7 @@
     <a href="{{ "voxfem/" | relURL }}" class="linkbtn">‹ Retour à VoxFEM</a>
     <div class="kick">VoxFEM · Cas tests</div>
     <h1>L'état de validation du moteur</h1>
-    <p>Chaque cas compare un calcul VoxFEM à une solution de référence : solution analytique, benchmark NAFEMS ou essai publié. La campagne complète est rejouée à chaque modification du code des solveurs.</p>
+    <p>Chaque cas compare un calcul VoxFEM à une solution de référence : solution analytique, benchmark NAFEMS, cas de la base de validation code_aster ou essai publié. La campagne complète est rejouée à chaque modification du code des solveurs.</p>
     {{- $v := site.Data.validation }}{{ $ko := 0 }}{{ $n := 0 }}{{ $cats := slice }}
     {{- range $v.cas }}{{ $n = add $n (len .r) }}{{ $bad := false }}{{ range .r }}{{ if not (index . 5) }}{{ $bad = true }}{{ end }}{{ end }}{{ if $bad }}{{ $ko = add $ko 1 }}{{ end }}{{ if not (in $cats .cat) }}{{ $cats = $cats | append .cat }}{{ end }}{{ end }}
     {{- $nc := len $v.cas }}
